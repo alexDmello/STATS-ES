@@ -49,7 +49,7 @@ export default function Signup() {
       alert(error.message)
     } else {
       alert('Signup successful! Redirecting...')
-      window.location.href = '/login'
+      window.location.href = '/'
     }
     setLoading(false)
   }
