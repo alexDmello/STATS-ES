@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
+/* Removed @theme rule as it is not recognized by standard CSS */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  background-color: #0a0a0a;
+  color: white;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background-color: #0a0a0a; /* Fixes grey border during pull-down [cite: 191] */
+  overscroll-behavior-y: none; /* Stops rubber-band bounce [cite: 191] */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0a0a0a;
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overscroll-behavior-y: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::selection {
+  background-color: rgba(255, 107, 0, 0.3); /* Neon orange selection */
 }
